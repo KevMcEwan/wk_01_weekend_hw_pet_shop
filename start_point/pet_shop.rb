@@ -60,3 +60,8 @@ def remove_pet_by_name(pet_shop, name)
   end
   return nil
 end
+
+
+def add_pet_to_stock(pet_shop, new_pet)
+  return pet_shop[:pets].push(new_pet).count
+end
