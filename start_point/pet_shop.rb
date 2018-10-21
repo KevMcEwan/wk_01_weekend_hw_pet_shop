@@ -83,5 +83,10 @@ def customer_pet_count(number_of_pets)
 end
 
 def add_pet_to_customer(customer, pet)
-  return customer[:pets] << pet  
+  return customer[:pets] << pet
+end
+
+
+def customer_can_afford_pet(customer, pet)
+  return customer[:cash] > pet[:price]
 end
