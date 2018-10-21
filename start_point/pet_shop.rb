@@ -14,13 +14,13 @@ def add_or_remove_cash(total_cash, add_amount)
 end
 
 
-def pets_sold(number_of_pets_sold)
-  return number_of_pets_sold[:admin][:pets_sold]
+def pets_sold(pet_shop)
+  return pet_shop[:admin][:pets_sold]
 end
 
 
-def increase_pets_sold(total_pets_sold, add_number)
-  total_pets_sold[:admin][:pets_sold] += add_number
+def increase_pets_sold(pets_sold, add_number)
+  pets_sold[:admin][:pets_sold] += add_number
 end
 
 
@@ -78,8 +78,8 @@ return total_cash[:cash] -= deduct_amount
 end
 
 
-def customer_pet_count(number_of_pets)
-  return number_of_pets[:pets].count
+def customer_pet_count(customer)
+  return customer[:pets].count
 end
 
 def add_pet_to_customer(customer, pet)
@@ -89,4 +89,13 @@ end
 
 def customer_can_afford_pet(customer, pet)
   return customer[:cash] > pet[:price]
+end
+
+
+def sell_pet_to_customer(pet_shop, pet, customer)
+  return
+    add_pet_to_customer(customer, find_pet_by_name(pet_shop, pet))
+    # customer_pet_count(customer)
+    # pets_sold(pet_shop)
+    # increase_pets_sold((pets_sold), 1)
 end
