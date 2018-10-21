@@ -3,6 +3,7 @@ def pet_shop_name(pet_shop)
 end
 
 
+
 def total_cash(pet_shop)
   return pet_shop[:admin][:total_cash]
 end
@@ -64,4 +65,23 @@ end
 
 def add_pet_to_stock(pet_shop, new_pet)
   return pet_shop[:pets].push(new_pet).count
+end
+
+
+def customer_cash(customers)
+  return customers[:cash]
+end
+
+
+def remove_customer_cash(total_cash, deduct_amount)
+return total_cash[:cash] -= deduct_amount
+end
+
+
+def customer_pet_count(number_of_pets)
+  return number_of_pets[:pets].count
+end
+
+def add_pet_to_customer(customer, pet)
+  return customer[:pets] << pet  
 end
